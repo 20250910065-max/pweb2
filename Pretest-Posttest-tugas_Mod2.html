@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posttest-Pretest-Tugas_Mod2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 16px;
+            line-height: 1.6;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        .screenshot {
+            border: 2px dashed #999;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .subjudul {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 0%;
+
+            h1 {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center>WEB DESAIN - MODUL 2 </center>
+    </h1>
+    <p class="subjudul">GIT</p>
+    <p>
+        <center>Dosen Pengampu: Dede Irawan, M.Kom</center>
+    </p>
+    <hr>
+    <p>Nama: Reinna Valogina</p>
+    <p>NIM: 20250910065</p>
+    <p>Kelas: SINFC 2025 03</p>
+    <hr>
+    <h2>A. Pre-Test</h2>
+
+    <h3>1. Apa tujuan menggunakan version control dalam pengembangan perangkat lunak?</h3>
+    <p>
+        Untuk mencatat dan mengelola setiap perubahan pada kode, sehingga riwayat perubahan
+        tersimpan dan bisa dikembalikan ke versi sebelumnya kalau terjadi kesalahan.
+        Version control juga memudahkan kerja tim, karena beberapa orang bisa mengerjakan proyek
+        yang sama secara bersamaan tanpa saling menimpa pekerjaan, lalu hasilnya digabungkan.
+    </p>
+
+    <h3>2. Jelaskan perbedaan antara git add dan git commit!</h3>
+    <ul>
+        <li>git add memindahkan perubahan pada file ke staging area,
+            yaitu tempat persiapan sebelum perubahan disimpan. Contoh: git add nama_file.</li>
+        <li>git commit menyimpan perubahan yang sudah ada di staging area ke riwayat repository sebagai satu versi,
+            lengkap dengan pesan penjelasan. Contoh: git commit -m "pesan commit".</li>
+    </ul>
+    <p>Jadi git add untuk memilih perubahan yang akan disimpan, sedangkan git commit untuk benar-benar menyimpannya.</p>
+
+    <h3>3. Bagaimana cara membuat branch baru di Git?</h3>
+    <ol>
+        <li>Gunakan perintah: git branch nama_branch</li>
+        <li>Lalu pindah ke branch tersebut dengan: git checkout nama_branch</li>
+        <li>Atau bisa sekaligus membuat dan pindah dengan satu perintah: git checkout -b nama_branch</li>
+    </ol>
+    <p>(Di Git versi baru, bisa juga memakai git switch -c nama_branch.)</p>
+<hr>
+    <h2>B. Post-Test</h2>
+    <h3>1. Apa fungsi dari git merge dalam workflow Git?</h3>
+<p>
+    Git merge dipakai untuk menggabungkan hasil kerja dari satu branch ke branch lain.
+    Contohnya, setelah fitur selesai dikerjakan di branch fitur, hasilnya digabung ke branch main
+    supaya isi file dan riwayat commit dari dua branch itu jadi satu.
+</p>
+
+<h3>2. Jelaskan cara mengatasi konflik saat melakukan merge!</h3>
+<p>
+    Konflik muncul kalau dua branch sama-sama mengubah baris yang sama di file yang sama,
+    jadi Git bingung mau pakai yang mana. Cara mengatasinya:
+</p>
+<ol>
+    <li>Cek file mana yang konflik dengan git status.</li>
+    <li>Buka file itu, nanti ada tanda <<<<<<<,=======, dan >>>>>>> di bagian yang konflik.</li>
+    <li>Tentukan isi mana yang mau dipakai (salah satu atau digabung), lalu hapus ketiga tanda tersebut.</li>
+    <li>Simpan file, kemudian ketik git add nama_file</li>
+    <li>Terakhir git commit untuk menyelesaikan proses merge.</li>
+</ol>
+
+<h3>3. Tulis langkah-langkah untuk menambahkan file baru ke repository Git dan melakukan commit.</h3>
+<ol>
+    <li>Masukkan file baru ke folder proyek.</li>
+    <li>Ketik <code>git status</code> untuk melihat apakah file sudah terdeteksi (statusnya untracked).</li>
+    <li>Ketik <code>git add nama_file</code> supaya file masuk ke staging area.</li>
+    <li>Ketik <code>git commit -m "pesan commit"</code> untuk menyimpan perubahan.</li>
+    <li>Kalau mau dikirim ke GitHub, lanjutkan dengan <code>git push</code>.</li>
+</ol>
+<hr>
+<h2>C. Latihan/Tugas</h2>
+<h3>1. Repository Git untuk proyek web (pembuatan, commit, dan push ke GitHub)</h3>
+    <p>
+        Proyek: Profil Keluarga.<br>
+        Repository: <a href="https://github.com/20250910065-max/Profile_Keluarga.git">https://github.com/20250910065-max/Profile_Keluarga.git</a><br>
+        Situs (GitHub Pages): <a href="https://20250910065-max.github.io/Profile_Keluarga/Profile_Keluargacss">https://20250910065-max.github.io/Profile_Keluarga/Profile_Keluargacss</a>
+    </p>
+    <p>Perintah yang dijalankan:</p>
+<pre>git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/20250910065-max/Profile_Keluarga.git
+git push -u origin main</pre>
+    <div class="screenshot"><img src="Cuplikan layar 2026-10-31 150416.png" width="500"></div>
+    <div class="screenshot"><img src="Screenshot (55).png" width="700"></div>
+
+    <h3>2. Workflow Git dengan branch fitur baru dan integrasi ke branch utama</h3>
+    <p>Alur: <code>main</code> (stabil) &rarr; buat branch fitur &rarr; commit di branch fitur &rarr; merge ke <code>main</code> &rarr; push &rarr; hapus branch fitur.</p>
+<pre>git checkout -b fitur-readme
+echo "# Profil Keluarga" &gt; README.md
+git add README.md
+git commit -m "Add README"
+git checkout main
+git merge fitur-readme
+git push origin main
+git branch -d fitur-readme
+git log --oneline --graph</pre>
+    <div class="screenshot"><img src="Screenshot (62).png" width="700"></div>
+    <div class="screenshot"><img src="Screenshot (63).png" width="700"></div>
+    <div class="screenshot"><img src="Screenshot (64).png" width="700"></div>
+    <div class="screenshot"><img src="Screenshot (61).png" width="700"></div>
+    
+
+    <h3>3. Seluruh praktikum modul sebelumnya disimpan di repository Git</h3>
+    <p>
+        Repository: <a href="https://github.com/20250910065-max/pweb1.git">https://github.com/20250910065-max/pweb1.git</a><br>
+        Isi: Latihan 01 sampai 05, Post Test 01, dan Landing Page.
+    </p>
+    <div class="screenshot"><img src="Screenshot (65).png" width="700"></div>
+</body>
+</html>
